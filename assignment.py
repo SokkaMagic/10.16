@@ -60,7 +60,7 @@ def ReverseList(Numbers):
         finallst.insert(0,-1)
 
 
-    return finallst
+    return True
 
 # Exercise 3
 def Balanced(Expression):
