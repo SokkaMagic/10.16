@@ -39,8 +39,20 @@ def Size():
 
 
 def ReverseList(Numbers):
-    # Write your code here
-    pass
+    lst=[]
+    global Stack, TopOfStack
+    for i in range(len(Numbers)):
+        if TopOfStack == 9:
+            for j in range(len(Numbers)-9):
+                lst.append(Numbers[TopOfStack])
+                TopOfStack += 1
+            print("Stack full")
+            return lst
+
+
+        TopOfStack += 1
+        Stack[i] = Numbers[i]
+    return True
 
 
 # Exercise 3
