@@ -43,9 +43,7 @@ def ReverseList(Numbers):
     global Stack, TopOfStack
     for i in range(len(Numbers)):
         if TopOfStack == 9:
-            for j in range(len(Numbers)-9):
-                lst.append(Numbers[TopOfStack])
-                TopOfStack += 1
+            lst = Stack[::-1]
             print("Stack full")
             return lst
 
