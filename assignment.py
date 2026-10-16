@@ -55,6 +55,8 @@ def ReverseList(Numbers):
     for i in range(len(lst)):
         finallst.append(lst[i])
 
+    TopOfStack = -1
+
     return finallst
 
 # Exercise 3
