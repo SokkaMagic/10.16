@@ -4,37 +4,38 @@
 # Exercise 1
 Stack = []
 TopOfStack = -1
-# Write code here to fill Stack with 10 elements, all -1
+for x in range(10):
+    Stack.append(-1)
+
 
 def Push(DataToPush):
     global Stack, TopOfStack
     if TopOfStack == 9:
         return False
-    for x in range(10):
-        Stack.append(-1)
     TopOfStack = TopOfStack + 1
     Stack[TopOfStack] = DataToPush
     return True
 
 def Pop():
-    # Write your code here
-    pass
+    global Stack, TopOfStack
+    if TopOfStack == -1:
+        return -1
+    DataToReturn = Stack[TopOfStack]
+    TopOfStack = TopOfStack - 1
+    return DataToReturn
 
-
-# Exercise 2
 def Peek():
-    # Write your code here
-    pass
+    if TopOfStack == -1:
+        return -1
+    return Stack[TopOfStack]
+
 
 
 def IsEmpty():
-    # Write your code here
-    pass
-
+    return TopOfStack == -1
 
 def Size():
-    # Write your code here
-    pass
+    return TopOfStack + 1
 
 
 def ReverseList(Numbers):
