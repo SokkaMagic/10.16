@@ -7,9 +7,14 @@ TopOfStack = -1
 # Write code here to fill Stack with 10 elements, all -1
 
 def Push(DataToPush):
-    # Write your code here
-    pass
-
+    global Stack, TopOfStack
+    if TopOfStack == 10:
+        return False
+    for x in range(10):
+        Stack.append(-1)
+    TopOfStack = TopOfStack + 1
+    Stack[TopOfStack] = DataToPush
+    return True
 
 def Pop():
     # Write your code here
