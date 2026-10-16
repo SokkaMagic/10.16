@@ -37,7 +37,6 @@ def IsEmpty():
 def Size():
     return TopOfStack + 1
 
-
 def ReverseList(Numbers):
     lst=[]
     finallst=[]
@@ -50,17 +49,17 @@ def ReverseList(Numbers):
 
 
         TopOfStack += 1
-        Stack[i] = Numbers[i]
-    lst = Stack[::-1]
+        Stack[TopOfStack] = Numbers[i]
+    lst = Stack[:TopOfStack+1][::-1]
 
     for i in range(len(lst)):
-        finallst.insert(0,lst[i])
+        finallst.append(lst[i])
 
     for i in range(10-len(lst)):
-        finallst.insert(0,-1)
+        finallst.append(-1)
 
 
-    return True
+    return finallst
 
 # Exercise 3
 def Balanced(Expression):
