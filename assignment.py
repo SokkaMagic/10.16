@@ -51,7 +51,7 @@ def ReverseList(Numbers):
         TopOfStack += 1
         Stack[i] = Numbers[i]
     lst = Stack[::-1]
-    return lst
+    return True
 
 # Exercise 3
 def Balanced(Expression):
