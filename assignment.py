@@ -8,7 +8,7 @@ TopOfStack = -1
 
 def Push(DataToPush):
     global Stack, TopOfStack
-    if TopOfStack == 10:
+    if TopOfStack == 9:
         return False
     for x in range(10):
         Stack.append(-1)
