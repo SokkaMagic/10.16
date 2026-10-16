@@ -61,5 +61,23 @@ def ReverseList(Numbers):
 
 # Exercise 3
 def Balanced(Expression):
-    # Write your code here
-    pass
+    global TopOfStack
+
+    TopOfStack = -1
+
+    for ch in Expression:
+        if ch == '(' or ch == '[' or ch == '{':
+            if not Push(ch):
+                return False
+
+        elif ch == ')' or ch == ']' or ch == '}':
+            bracket = Pop()
+
+            if ch == ')' and bracket != '(':
+                return False
+            elif ch == ']' and bracket != '[':
+                return False
+            elif ch == '}' and bracket != '{':
+                return False
+
+    return TopOfStack == -1
