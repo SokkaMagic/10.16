@@ -40,6 +40,7 @@ def Size():
 
 def ReverseList(Numbers):
     lst=[]
+    finallst=[]
     global Stack, TopOfStack
     for i in range(len(Numbers)):
         if TopOfStack == 9:
@@ -51,7 +52,15 @@ def ReverseList(Numbers):
         TopOfStack += 1
         Stack[i] = Numbers[i]
     lst = Stack[::-1]
-    return True
+
+    for i in range(len(lst)):
+        finallst.insert(0,lst[i])
+
+    for i in range(10-len(lst)):
+        finallst.insert(0,-1)
+
+
+    return finallst
 
 # Exercise 3
 def Balanced(Expression):
