@@ -37,25 +37,21 @@ def IsEmpty():
 def Size():
     return TopOfStack + 1
 
+
 def ReverseList(Numbers):
-    lst = []
-    finallst = []
-    global Stack, TopOfStack
-
-    for i in range(len(Numbers)):
-        if TopOfStack == 9:
-            print("Stack full")
-            return False
-
-        TopOfStack += 1
-        Stack[TopOfStack] = Numbers[i]
-
-    lst = Stack[:TopOfStack+1][::-1]
-
-    for i in range(len(lst)):
-        finallst.append(lst[i])
+    global TopOfStack
 
     TopOfStack = -1
+
+    for number in Numbers:
+        if not Push(number):
+            print("Stack full")
+            break
+
+    finallst = []
+
+    while TopOfStack != -1:
+        finallst.append(Pop())
 
     return finallst
 
